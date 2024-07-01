@@ -1,0 +1,41 @@
+
+<div class="flex justify-between">
+  <div class="flex items-baseline mb-1">
+    <label class="text-sm text-gray-700 font-medium">
+      Enter ABHA Number / Address
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <a class="text-xs inline-flex items-center text-blue-600 hover:text-blue-700 cursor-pointer">
+      Register new
+    </a>
+  </div>
+</div>
+
+<%= form_tag abha_patient_registration_auth_init_path do %>
+  <div class="mb-4">
+    <input class="border border-gray-300 h-9 w-full shadow-none rounded-md focus:border-blue-500 focus:ring-blue-500 text-gray-900 text-sm p-2" type="text" name="abha_number_or_address" value="abhishek77in@sbx" />
+  </div>
+  <div class="text-sm text-gray-700 font-medium mb-3">
+    Choose verification mode
+  </div>
+  <div class="mb-2">
+    <div class="inline-flex items-center">
+      <input type="radio" value="MOBILE_OTP" name="auth_method" id="mobile_otp" checked="checked" class="mb-0 mr-2 appearance-none w-4 h-4 border border-gray-300 rounded-full text-blue-500 focus:ring-blue-500 shadow-sm flex-shrink-0" />
+      <div>
+        <label for="mobile_otp" class="cursor-pointer text-gray-700 text-sm">Mobile OTP</label>
+      </div>
+    </div>
+  </div>
+  <div class="mb-2">
+    <div class="inline-flex items-center">
+      <input type="radio" value="AADHAAR_OTP" name="auth_method" id="aadhar_otp" class="mb-0 mr-2 appearance-none w-4 h-4 border border-gray-300 rounded-full text-blue-500 focus:ring-blue-500 shadow-sm flex-shrink-0" />
+      <div>
+        <label for="aadhar_otp" class="cursor-pointer text-gray-700 text-sm">Aadhaar OTP</label>
+      </div>
+    </div>
+  </div>
+  <button class="primary-btn-sm focus:border-blue-500 focus:ring-blue-500 font-semibold mt-6" type="submit">
+    Continue
+  </button>
+<% end %>
