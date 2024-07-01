@@ -1,0 +1,27 @@
+.flex.justify-between
+  .flex.items-baseline.mb-1
+    %label.text-sm.text-gray-700.font-medium
+      Enter ABHA Number / Address
+  .inline-flex.items-center
+    %a.text-xs.inline-flex.items-center.text-blue-600.hover:text-blue-700.cursor-pointer
+      Register new
+
+= form_tag abha_patient_registration_auth_init_path do
+  .mb-4
+    %input.border.border-gray-300.h-9.w-full.shadow-none.rounded-md.focus:border-blue-500.focus:ring-blue-500.text-gray-900.text-sm.p-2{name: 'abha_number_or_address', value: 'abhishek77in@sbx'}
+  .text-sm.text-gray-700.font-medium.mb-3
+    Choose verification mode
+  .mb-2
+    .inline-flex.items-center
+      %input.mb-0.mr-2.appearance-none.w-4.h-4.border.border-gray-300.rounded-full.text-blue-500.focus:ring-blue-500.shadow-sm.flex-shrink-0{:type => "radio", value: 'MOBILE_OTP', name: 'auth_method', id: 'mobile_otp', checked: true}
+      %div
+        %label.cursor-pointer.text-gray-700.text-sm{for: 'mobile_otp'} Mobile OTP
+
+  .mb-2
+    .inline-flex.items-center
+      %input.mb-0.mr-2.appearance-none.w-4.h-4.border.border-gray-300.rounded-full.text-blue-500.focus:ring-blue-500.shadow-sm.flex-shrink-0{:type => "radio", value: 'AADHAAR_OTP', name: 'auth_method', id: 'aadhar_otp'}
+      %div
+        %label.cursor-pointer.text-gray-700.text-sm{for: 'aadhar_otp'} Aadhaar OTP
+
+  %button.primary-btn-sm.focus:border-blue-500.focus:ring-blue-500.font-semibold.mt-6
+    Continue
